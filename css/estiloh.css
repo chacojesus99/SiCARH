@@ -1,0 +1,172 @@
+/*****************Página en general**************************/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*****************Estilo menú********************************/
+header{
+    height: 50px;
+    background: #282A36;
+    color: #FFF;
+    display:flex;
+    justify-content: flex-end;
+}
+
+#btn-menu{
+    display:none;
+}
+
+header label{
+    font-size: 30px;
+    cursor: pointer;
+    display:none;
+}
+
+.menu ul{
+    background: #282A36;
+    display: flex;
+    list-style: none;
+}
+
+.menu ul ul{
+    display: none;
+}
+
+.menu a{
+    display: block;
+    padding: 15px 20px;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.menu a:hover{
+    background: rgba(0,0,0,0.3);
+}
+
+.menu a #span {
+    margin-left: 10px;
+}
+
+.menu ul li:hover ul{
+    display: block;
+    position: absolute;
+}
+
+@media (max-width: 768px) {
+    header label {
+        display: block;
+        margin-right:  10px;
+    }
+
+    header{
+        align-items:center;
+        right: 10px;
+    }
+
+    .menu {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        transform: translateX(-100%);
+        transition: all 0.3s;
+    }
+
+    .menu ul{
+        display: block;
+        background: #555;
+    } 
+
+    .menu ul li:hover ul{
+        display: none;
+        position: static;
+    }
+
+    .menu a #span{
+        position: absolute;
+        right: 5px;
+    }
+
+    #btn-menu:checked ~ .menu {
+        transform: translateX(0%);
+
+    }
+
+    .menu ul ul {
+        background: rgba(0,0,0,0.4);
+    }
+}
+
+/*****************Estilo cuerpo de la página********************************/
+
+#titulo{
+    text-align: center;
+}
+
+h1{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 35px;
+    font-weight: bold;
+    color: #FFF;
+}
+
+/*****************Estilo de tabla********************************/
+
+#contenedor1{
+    margin: 20px auto;
+    width: 100% ;
+}
+
+table{
+    background-color: #fff;
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,td{
+    padding: 10px;
+}
+
+td{
+    text-align: center;
+}
+
+thead{
+    background-color: #282a36;
+    border-bottom: solid 5px #FF6400;
+    color: white;
+    text-align: center;
+}
+
+tr:nth-child(even){
+    background-color: #ddd;    
+}
+
+
+
+.btn_update{
+    display: inline-block;
+    font-size: 14px;
+    background: #1b743c;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+.btn_delete{
+    display: inline-block;
+    font-size: 14px;
+    background: #FF6400;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+.btn_delete, .btn_update{
+    text-decoration: none;
+}
